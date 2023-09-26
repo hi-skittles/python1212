@@ -1,9 +1,8 @@
 # Problem 1
 print('Problem 1', end='\n\n----------\n')
-numbers = [1, 2, 3, 4]  # ???
-
-mult = 24
-for n in range(1, 5):
+numbers = [1, 2, 3, 4]  # ??? edit: ohhhhhhhhhh i see aaahaha
+mult = 1
+for n in numbers:  # previous commit to this file uses range(1, 5) which is what the hard coded version
     mult *= n
 print(mult)
 print('----------', end='\n\n')
