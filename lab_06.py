@@ -51,7 +51,15 @@ if num.isdigit():
     else:
         print('Number not in range.')
 else:
-    print('Input not number.')
+    print('Input not valid number.')
 print('----------', end='\n\n')
 
 # Problem 5
+print('Problem 5', end='\n\n----------\n')
+pw1 = input('Enter a password: ')
+pw2 = input('Enter a password again: ')
+if pw1 == pw2:
+    print('Passwords match. User logged in.')
+else:
+    print('Passwords don’t match. Try again!')
+print('----------', end='\n\n')
