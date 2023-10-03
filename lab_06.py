@@ -63,3 +63,23 @@ if pw1 == pw2:
 else:
     print('Passwords don’t match. Try again!')
 print('----------', end='\n\n')
+
+# Problem 6
+print('Problem 6', end='\n\n----------\n')
+strin = input('Enter a string: ')
+strin = strin.lower()
+strin = strin[-1]
+match strin:
+    case 'a':
+        print('Vowel')
+    case 'e':
+        print('Vowel')
+    case 'i':
+        print('Vowel')
+    case 'o':
+        print('Vowel')
+    case 'u':
+        print('Vowel')
+    case _:  # default
+        print('Consonant')
+print('----------', end='\n\n')
