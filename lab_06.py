@@ -160,6 +160,7 @@ def eleven():
     print(ans)
     print('----------', end='\n\n')
 
+
 # Problem 12
 def twelve():
     guest_names = ['Grace Hopper', 'Richard Tapia', 'Timnit Gebru', 'Radia Perlman', 'Ada Lovelace', 'Ruzena Bajcsy']
