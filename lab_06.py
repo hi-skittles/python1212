@@ -142,9 +142,10 @@ def nine():
 def ten():
     print('Problem 10', end='\n\n----------\n')
     numbers = [39, 72, 16, 89, 4, 57, 61, 98, 27, 12, 33, 68, 6, 55, 91]
-    for _ in range(len(numbers)):
-        if _ % 2 == 0:
-            print(numbers[_])
+    print(numbers[::2])
+    # for _ in range(len(numbers)):
+    #     if _ % 2 == 0:
+    #         print(numbers[_])  # i like this method better
     print('----------', end='\n\n')
 
 
