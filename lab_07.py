@@ -14,16 +14,19 @@ def one_alt():
     print('Problem 1', end='\n\n----------\n')
     awards = ['Emmy', 'Tony', 'Academy', 'Grammy', 'Oscar']
     word = input("Enter a word to search for: ")
-    if word in awards:
-        print(f"""Query "{word}" exists in the list.""")
-    elif word not in awards:
-        print(f"""Query "{word}" does not exist in the list.""")
+    (lambda word: print(f"""Query "{word}" exists in the list.""") if word in awards else print(
+        f"""Query "{word}" does not exist in the list."""))(word)
+    # if word in awards:
+    #     print(f"""Query "{word}" exists in the list.""")
+    # elif word not in awards:
+    #     print(f"""Query "{word}" does not exist in the list.""")
     print('----------', end='\n\n')
 
 
 # Problem 2
 def two():
     print('Problem 2', end='\n\n----------\n')
+    # override list literal
     my_friends = []
     my_friends.append("friend1")
     my_friends.append("friend2")
@@ -54,8 +57,9 @@ def four():
     print('Problem 4', end='\n\n----------\n')
     numbers = [71, 96, 88, 76, 39, 34, 17, 88, 40, 69, 51, 23, 84, 74, 14, 84, 20, 63, 37]
     sqrts = []
+    s = lambda x: x ** 0.5
     for _ in numbers:
-        sqrts.append(_ ** 0.5)
+        sqrts.append(s(_))
     print(f"numbers: {numbers}")
     print(f"roots: {sqrts}")
     print('----------', end='\n\n')
@@ -69,7 +73,7 @@ def five():
              'is', 'still', 'piling', 'up', '.']
     stri = ""
     for _ in words:
-            stri += " " + _
+        stri += " " + _
     print(stri)
     print('----------', end='\n\n')
 
@@ -131,31 +135,30 @@ def nine():
     print('----------', end='\n\n')
 
 
-
 question = input('Which problem would you like to run?: ')
-if question.isdigit():
-    match question:
-        case '1':
-            one()
-        case '1a':
-            one_alt()
-        case '2':
-            two()
-        case '3':
-            three()
-        case '4':
-            four()
-        case '5':
-            five()
-        case '6':
-            six()
-        case '7':
-            seven()
-        case '8':
-            eight()
-        case '9':
-            nine()
-        case _:  # default
-            print('Invalid problem number.')
-else:
-    print('Invalid problem number.')
+# if question.isdigit():
+match question:
+    case '1':
+        one()
+    case '1a':
+        one_alt()
+    case '2':
+        two()
+    case '3':
+        three()
+    case '4':
+        four()
+    case '5':
+        five()
+    case '6':
+        six()
+    case '7':
+        seven()
+    case '8':
+        eight()
+    case '9':
+        nine()
+    case _:  # default
+        print('Invalid problem number.')
+# else:
+#     print('Invalid problem number.')
