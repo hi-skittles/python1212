@@ -16,10 +16,6 @@ def one_alt():
     word = input("Enter a word to search for: ")
     (lambda word: print(f"""Query "{word}" exists in the list.""") if word in awards else print(
         f"""Query "{word}" does not exist in the list."""))(word)
-    # if word in awards:
-    #     print(f"""Query "{word}" exists in the list.""")
-    # elif word not in awards:
-    #     print(f"""Query "{word}" does not exist in the list.""")
     print('----------', end='\n\n')
 
 
