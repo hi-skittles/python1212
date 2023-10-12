@@ -5,8 +5,7 @@ def one():
     print('Problem 1', end='\n\n----------\n')
     it = input('Enter a number: ')
     if it.isdigit():
-        it = int(it)
-        if it % 2 == 0:
+        if (lambda x: x % 2 == 0)(int(it)):
             print('Even')
         else:
             print('Odd')
