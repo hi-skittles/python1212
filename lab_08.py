@@ -1,4 +1,6 @@
 # functions
+import os
+
 
 # Problem 1
 def one():
@@ -49,6 +51,33 @@ def three():
         months_list = f.read().split('\n')
     # print the contents of the list months_list
     print(months_list)
+    # test if file was created?
+    if os.path.exists('./lab_08/months.txt'):
+        print('program success')
+    print('----------', end='\n\n')
+
+
+# Problem 4
+def four():
+    print('Problem 4', end='\n\n----------\n')
+    # ./lab_08/words5000.csv
+    file = input('Enter file name: ')
+    if os.path.exists(file):
+        try:
+            file = open(file, 'r')
+        except FileNotFoundError:
+            print('File not found.')
+            print('----------', end='\n\n')
+            return
+        file = file.read()
+        query = input('Enter a word to search for: ')
+        is_invalid_query = any(_.isdigit() for _ in query)
+        if not is_invalid_query and query.lower() in file:
+            4print(f'"{query}" exists in the list.')
+        else:
+            print(f'"{query}" does not exist in the list, or the query is invalid.')
+    else:
+        print('File not found.')
     print('----------', end='\n\n')
 
 
