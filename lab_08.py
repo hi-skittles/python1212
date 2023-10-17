@@ -1,6 +1,10 @@
 # functions
 import os
 
+RESET = "\033[0m"
+RED = "\033[91m"
+GREEN = "\033[92m"
+
 
 # Problem 1
 def one():
@@ -44,8 +48,10 @@ def three():
     # store the contents of the list months to a new text file called months.txt
     with open('./lab_08/months.txt', 'w') as f:
         for month in months:
-            if month == months[-1]: f.write(month)
-            else: f.write(month + '\n')
+            if month == months[-1]:
+                f.write(month)
+            else:
+                f.write(month + '\n')
     # read the contents of the file months.txt and store it in a list called months_list
     with open('./lab_08/months.txt', 'r') as f:
         months_list = f.read().split('\n')
@@ -61,9 +67,6 @@ def three():
 def four():
     print('Problem 4', end='\n\n----------\n')
     # ./lab_08/words5000.csv
-    RESET = "\033[0m"
-    RED = "\033[91m"
-    GREEN = "\033[92m"
     file = './lab_08/words5000.csv'  # input('Enter file name: ')
     if os.path.exists(file):
         try:
@@ -74,12 +77,46 @@ def four():
             return
         file = file.read()
         query = input('Enter a word to search for: ')
-        if not any(_.isdigit() for _ in query) and query.lower() in file: print(f'"{GREEN}{query}{RESET}" exists in '
-                                                                                f'the list.')
-        else: print(f'"{RED}{query}{RESET}" does not exist in the list, or the query is invalid. Queries cannot '
-                    f'include any digits or numbers.')
+        if not any(_.isdigit() for _ in query) and query.lower() in file:
+            print(f'"{GREEN}{query}{RESET}" exists in '
+                  f'the list.')
+        else:
+            print(f'"{RED}{query}{RESET}" does not exist in the list, or the query is invalid. Queries cannot '
+                  f'include any digits or numbers.')
     else:
         print('File not found.')
+    print('----------', end='\n\n')
+
+
+# Problem 4 - Alternative
+def four_a():
+    print('Problem 4', end='\n\n----------\n')
+
+    def m():
+        file = './lab_08/words5000.csv'  # input('Enter file name: ')
+        if os.path.exists(file):
+            try:
+                file = open(file, 'r')
+            except FileNotFoundError:
+                print('File not found.')
+                print('----------', end='\n\n')
+                return
+            file = file.read()
+            query = input('Enter a word to search for: ')
+            if not any(_.isdigit() for _ in query) and query.lower() in file:
+                print(f'"{GREEN}{query}{RESET}" exists in '
+                      f'the list.')
+            else:
+                print(f'"{RED}{query}{RESET}" does not exist in the list, or the query is invalid. Queries cannot '
+                      f'include any digits or numbers.')
+        else:
+            print('File not found.')
+
+    m()
+    again = input("Would you like to search for another word? (y/n): ")
+    while again.lower() == 'y':
+        m()
+        again = input("Would you like to search for another word? (y/n): ")
     print('----------', end='\n\n')
 
 
@@ -94,5 +131,7 @@ match question:
         three()
     case '4':
         four()
+    case '4a':
+        four_a()
     case _:  # default
         print('Invalid problem number.')
