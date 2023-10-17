@@ -73,7 +73,7 @@ def four():
         query = input('Enter a word to search for: ')
         is_invalid_query = any(_.isdigit() for _ in query)
         if not is_invalid_query and query.lower() in file:
-            4print(f'"{query}" exists in the list.')
+            print(f'"{query}" exists in the list.')
         else:
             print(f'"{query}" does not exist in the list, or the query is invalid.')
     else:
