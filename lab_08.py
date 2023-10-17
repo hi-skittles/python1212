@@ -61,7 +61,10 @@ def three():
 def four():
     print('Problem 4', end='\n\n----------\n')
     # ./lab_08/words5000.csv
-    file = input('Enter file name: ')
+    RESET = "\033[0m"
+    RED = "\033[91m"
+    GREEN = "\033[92m"
+    file = './lab_08/words5000.csv'  # input('Enter file name: ')
     if os.path.exists(file):
         try:
             file = open(file, 'r')
@@ -71,11 +74,10 @@ def four():
             return
         file = file.read()
         query = input('Enter a word to search for: ')
-        is_invalid_query = any(_.isdigit() for _ in query)
-        if not is_invalid_query and query.lower() in file:
-            print(f'"{query}" exists in the list.')
-        else:
-            print(f'"{query}" does not exist in the list, or the query is invalid.')
+        if not any(_.isdigit() for _ in query) and query.lower() in file: print(f'"{GREEN}{query}{RESET}" exists in '
+                                                                                f'the list.')
+        else: print(f'"{RED}{query}{RESET}" does not exist in the list, or the query is invalid. Queries cannot '
+                    f'include any digits or numbers.')
     else:
         print('File not found.')
     print('----------', end='\n\n')
