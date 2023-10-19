@@ -47,18 +47,12 @@ def three():
               'November', 'December']
     # store the contents of the list months to a new text file called months.txt
     with open('./lab_08/months.txt', 'w') as f:
-        for month in months:
-            if month == months[-1]:
-                f.write(month)
-            else:
-                f.write(month + '\n')
+        f.write('\n'.join(months))
     # read the contents of the file months.txt and store it in a list called months_list
     with open('./lab_08/months.txt', 'r') as f:
-        months_list = f.readlines()
+        months_list = [line.rstrip() for line in f]
     # print the contents of the list months_list
-    months_again = []
-    for _ in months_list: months_again.append(_.rstrip())
-    print(months_again)
+    print(months_list)
     # test if file was created?
     if os.path.exists('./lab_08/months.txt'):
         print('program success')
