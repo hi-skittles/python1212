@@ -54,9 +54,11 @@ def three():
                 f.write(month + '\n')
     # read the contents of the file months.txt and store it in a list called months_list
     with open('./lab_08/months.txt', 'r') as f:
-        months_list = f.read().split('\n')
+        months_list = f.readlines()
     # print the contents of the list months_list
-    print(months_list)
+    months_again = []
+    for _ in months_list: months_again.append(_.rstrip())
+    print(months_again)
     # test if file was created?
     if os.path.exists('./lab_08/months.txt'):
         print('program success')
