@@ -1,7 +1,5 @@
-"""
-    Joining of two tables
-"""
 def join_loop(table1, table2, join_condition):
+    """Joining of two tables"""
     # empty result list
     res = []
 
@@ -16,17 +14,13 @@ def join_loop(table1, table2, join_condition):
     return res
 
 
-"""
-    This is an example for simple join callback, which can be used as a filter.
-"""
 def join_condition_callback(row1, row2, condition=any):
+    """This is an example for simple join callback, which can be used as a filter."""
     return row1[condition] == row2[condition]
 
 
-"""
-    Sorting a resulting table.
-"""
 def order_callback(raw):
+    """Sorting a resulting table."""
     return sorted(raw)
 
 
