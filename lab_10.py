@@ -61,7 +61,15 @@ def four():
 # Problem 5
 def five():
     print('Problem 5', end='\n\n----------\n')
-    message_count = {}
+    message_count = dict()
+    emails = open('./lab_10/Email_log.txt', 'r')
+    emails = emails.read().splitlines()
+    for email in emails:
+        count = email.split('@')[1].split(' ')
+        message_count[count[0]] = message_count.get(count[0], 0) + int(count[1])
+    # message_count = {email.split('@')[1].split(' ')[0]: email.split('@')[1].split(' ')[1] for email in emails}
+    print(message_count)
+    print('----------', end='\n\n')
 
 
 question = input('Which problem would you like to run?: ')
