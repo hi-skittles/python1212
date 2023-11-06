@@ -1,9 +1,16 @@
 RESET = "\033[0m"
 RED = "\033[91m"
 GREEN = "\033[92m"
+ITALICS = "\033[3m"
+FORMAT = "\x1B[0m"
+
 
 # Problem 1
-def one():
+def one() -> list:
+    """
+    Non-discrete function that adds an entry to an existing dictionary.
+    :return:
+    """
     print('Problem 1', end='\n\n----------\n')
     eng2sp = dict({'one': 'uno'})
     eng2sp['two'] = 'dos'
@@ -12,10 +19,9 @@ def one():
 
 
 # Problem 2
-def two():
+def two() -> list:
     """
     Returns each guest's name that is bringing more than one guest.
-
     :return: list
     """
     print('Problem 2', end='\n\n----------\n')
@@ -28,16 +34,24 @@ def two():
 
 
 # Problem 3
-def three():
+def three() -> dict:
+    """
+    Returns a dictionary of each letter and its count in the inputted string.
+    :return: list
+    """
     print('Problem 3', end='\n\n----------\n')
     words = input("Enter text to analyze: ").lower()
-    stored = {letter: words.count(letter) for letter in words if letter.isalpha()}  # concise
-    print(f'stored: {stored}')
+    stored = {letter: words.count(letter) for letter in words if letter.isalpha()}  # concise comprehension
+    print(f'letters: {stored}')
     print('----------', end='\n\n')
 
 
 # Problem 4
-def four():
+def four() -> str:
+    """
+    Returns synonyms for the inputted word, if it exists in the dictionary.
+    :return: string
+    """
     print('Problem 4', end='\n\n----------\n')
     word_synonyms = {
         'travel': ['journey', 'go', 'jaunt', 'move_around', 'move', 'locomote', 'change_of_location', 'traveling',
@@ -58,7 +72,11 @@ def four():
 
 
 # Problem 5
-def five():
+def five() -> dict:
+    """
+    Returns the number of messages sent by each user.
+    :return: dictionary
+    """
     print('Problem 5', end='\n\n----------\n')
     message_count = dict()
     emails = open('./lab_10/Email_log.txt', 'r').read().splitlines()
