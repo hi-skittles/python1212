@@ -31,7 +31,6 @@ def two():
 def three():
     print('Problem 3', end='\n\n----------\n')
     words = input("Enter text to analyze: ").lower()
-    stored = dict()
     stored = {letter: words.count(letter) for letter in words if letter.isalpha()}  # concise
     print(f'stored: {stored}')
     print('----------', end='\n\n')
@@ -62,12 +61,11 @@ def four():
 def five():
     print('Problem 5', end='\n\n----------\n')
     message_count = dict()
-    emails = open('./lab_10/Email_log.txt', 'r')
-    emails = emails.read().splitlines()
+    emails = open('./lab_10/Email_log.txt', 'r').read().splitlines()
     for email in emails:
         count = email.split('@')[1].split(' ')
         message_count[count[0]] = message_count.get(count[0], 0) + int(count[1])
-    # message_count = {email.split('@')[1].split(' ')[0]: email.split('@')[1].split(' ')[1] for email in emails}
+    # message_count = {count[0]: message_count.get(count[0], 0) + int(count[1]) for count in (email.split('@')[1].split(' ') for email in emails)}  # i do not think this is possible to use a dict comp
     print(message_count)
     print('----------', end='\n\n')
 
