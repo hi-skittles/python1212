@@ -83,7 +83,7 @@ def five() -> dict:
     for email in emails:
         count = email.split('@')[1].split(' ')
         message_count[count[0]] = message_count.get(count[0], 0) + int(count[1])
-    message_count = {count[0]: message_count.get(count[0], 0) + int(count[1]) for count in (email.split('@')[1].split(' ') for email in emails)}  # i do not think this is possible to use a dict comp
+    # message_count = {count[0]: message_count.get(count[0], 0) + int(count[1]) for count in (email.split('@')[1].split(' ') for email in emails)}  # i do not think this is possible to use a dict comp
     print(message_count)
     print('----------', end='\n\n')
 
