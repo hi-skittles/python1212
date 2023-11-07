@@ -37,8 +37,6 @@ def get_even(foo: list) -> list:
     :return: list
     """
     bar = [i for i in foo if i % 2 == 0]
-    # res = []
-    # [res.append(x) for x in bar if x not in res]
     return list(set(bar))  # preservation is not a priority here
 
 
