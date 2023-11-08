@@ -6,11 +6,11 @@ def __init__():
 
 
 def __main__():
-    pass
+    return None
 
 
 def __name__():
-    return "__main__"
+    return "headers"
 
 
 #  print('Problem 1', end='\n\n----------\n')
