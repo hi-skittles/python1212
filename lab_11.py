@@ -47,7 +47,7 @@ def get_even(foo: List[int]) -> List[int]:
 # Problem 4
 def get_min_even(a: List[int], b: int) -> List[int]:
     """
-    Returns a list of unique even numbers from the input list that are greater than b.    :param a: list
+    Returns a list of unique even numbers from the input list that are greater than b.
 
     :param a: List of integers
     :param b: Minimum threshold level
