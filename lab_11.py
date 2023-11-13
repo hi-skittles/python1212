@@ -10,7 +10,7 @@ The third value, after the second colon (:), represents the step size, which det
 
 
 # Problem 1
-def add(a: int or float, b: int or float) -> int or float:  # not using Unions to reduce imports
+def add(a: int or float, b: int or float) -> int or float:  # not using Unions to show you dont need imports
     """
     Adds a to b, not including strings.
 
