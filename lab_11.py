@@ -74,7 +74,7 @@ if question.isdigit():
         case '3':
             print(f'{header_top(3)}{get_even([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 18, 12, 12, 1029, 109])}{header_bottom()}')
         case '4':
-            print(f'{header_top(4)}{get_min_even(list(range(0, 1001))[::30], 0)}{header_bottom()}')
+            print(f'{header_top(4)}{get_min_even(list(range(0, 1001))[::5], 0)}{header_bottom()}')
         case '5':
             print(f'{header_top(5)}{word_count("hello world")}\n{word_count("hello world, this is a test")}\n'
                   f'{word_count("hello world, this is a test, and it is a long test")}{header_bottom()}')
