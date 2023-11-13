@@ -63,7 +63,7 @@ def word_count(a: str) -> int:
     :param a: str
     :return: int
     """
-    return len(a.split())  # splitting at ' ' does not account for whitespaces and indents
+    return len(a.split())  # splitting at ' ' does not account for double whitespaces and indents
 
 
 question = input('Which problem would you like to run?: ')
