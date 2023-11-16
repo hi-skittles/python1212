@@ -31,3 +31,4 @@ table2 = [('cat', 'mice'), ('mice', 'cheese'), (4, 40)]
 result = join_loop(table1, table2, join_condition_callback)
 
 print(result)
+
