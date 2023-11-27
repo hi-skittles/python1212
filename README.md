@@ -73,6 +73,13 @@ This repository contains Python lab assignments completed during my college cour
   - Define functions with appropriate names and number of parameters
   - *No additional files for lab 11.*
 
+- [Lab 12: Repeated Execution](./lab_12.py)
+  - Distinguish between loops that repeat a fixed number of times and loops that repeat until a condition is met
+  - Demonstrate using a while loop to repeat actions until a certain condition is met
+  - Identify while loops that are likely to be infinite loops
+  - Additional files: __[coal_production.csv](./lab_12/)__
+  - *Please note: Problem 5 from lab 12 was excluded from this repository.*
+
 
 ## Getting Started
 

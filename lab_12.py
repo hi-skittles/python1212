@@ -26,7 +26,7 @@ def one() -> None:
 
 def two(n: int) -> List[int]:
     """
-    Prints all the squares of positive integers where the square is less than or equal to the value passed in,
+    Returns all the squares of positive integers where the square is less than or equal to the value passed in,
     in ascending order.
     :param n: int
     :return: List[int]
