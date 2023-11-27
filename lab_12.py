@@ -66,6 +66,7 @@ def four(starting: Union[int, float], goal: Union[int, float], daily_increase: U
 def five() -> None:
     return None
 
+
 question = input('Which problem would you like to run?: ')
 if question.isdigit():
     match question:
