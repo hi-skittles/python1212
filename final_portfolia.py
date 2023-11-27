@@ -1,4 +1,6 @@
 import csv
+import random
+from colours import colours as col
 
 
 class DataStruct:
@@ -88,7 +90,12 @@ Main Tasks:
     16. The Coromon type(s) with the lowest average Speed points.
 """
 count = data_struct_list.__len__()
-print("There are", count, "Coromon in the dataset.")
+print(f"There are {col.OKBLUE}{count}{col.ENDC} Coromon in the dataset.")
+
+random_coromon = [attribute for attribute in random.choice(data_struct_list).__dict__.values()]
+random_coromon = ", ".join(random_coromon)
+# you may also wish to use random.randint() to get a random index and then use that to get a random Coromon
+print(f"Random Coromon: {col.OKBLUE}{random_coromon}{col.ENDC}.")
 
 types = {character_type.chartype for character_type in data_struct_list}
-print(types)
+print(f"Types: {col.OKBLUE}" + ", ".join(types) + f"{col.ENDC}.")
