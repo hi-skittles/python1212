@@ -8,6 +8,7 @@ class DataStruct:
     """
     Represents a single Coromon data entry.
     TODO: use a better method of docstrings.
+    Example: variable (type): description
 
     CSV structure:
         0, 1, 2, 3, 4, 5, 6, 7, 8
@@ -94,27 +95,6 @@ with open("CoromonDataset.csv", "r") as file:
 
         # add the DataStruct object to the list
         data_struct_list.append(data_struct)
-
-"""
-Main Tasks:
-    1. How many Coromons exists.
-    2. Select a Coromon randomly and display its information.
-    3. The different types of Coromons.
-    4. For each Coromon type display the average value for each of its properties across all of the Coromon that belong
-       to that type.
-    5. The Coromon type(s) with the highest average Health Points points.
-    6. The Coromon type(s) with the lowest average Health Points points.
-    7. The Coromon type(s) with the highest average Attack points.
-    8. The Coromon type(s) with the lowest average Attack points.
-    9. The Coromon type(s) with the highest average Special Attack points.
-    10. The Coromon type(s) with the lowest average Special Attack points.
-    11. The Coromon type(s) with the highest average Defense points.
-    12. The Coromon type(s) with the lowest average Defense points.
-    13. The Coromon type(s) with the highest average Special Defense points.
-    14. The Coromon type(s) with the lowest average Special Defense points.
-    15. The Coromon type(s) with the highest average Speed points.
-    16. The Coromon type(s) with the lowest average Speed points.
-"""
 
 count: int = data_struct_list.__len__()
 print(f"There are {col.OKBLUE}{count}{col.ENDC} Coromon in the dataset.")
