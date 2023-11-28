@@ -57,6 +57,7 @@ class AverageDataPoints:
         sp_defence: The special defense stat of the Coromon.
         speed: The speed stat of the Coromon.
     """
+
     def __init__(self, ctype, hp, attack, sp_attack, defence, sp_defence, speed):
         """
         Initializes a new AverageDataPoints object with the given data.
@@ -77,26 +78,46 @@ class AverageDataPoints:
         self.speed = speed
 
 
-# create an empty list for data storage
-data_struct_list: list = []
+def read_data() -> list:
+    """
+    Reads the Coromon data from the CSV file and returns a list of DataStruct objects.
+    :return: A list of DataStruct objects.
+    """
+    # create an empty list for data storage
+    data_struct_list: list = []
 
-# read Coromon data from the CSV file
-with open("CoromonDataset.csv", "r") as file:
-    # use csv reader for reading
-    reader = csv.reader(file)
-    # we can skip the header row because it will count as an entry later on if not skipped
-    next(reader)
+    # read Coromon data from the CSV file
+    with open("CoromonDataset.csv", "r") as file:
+        # use csv reader for reading
+        reader = csv.reader(file)
+        # we can skip the header row because it will count as an entry later on if not skipped
+        next(reader)
 
-    # iterate over each row of data in the CSV file
-    for line in reader:
-        # create a DataStruct object from each row of data
-        data_struct: object = DataStruct(line[0], line[1], line[2], line[3], line[4], line[5], line[6], line[7],
-                                         line[8])
+        # iterate over each row of data in the CSV file
+        for line in reader:
+            # create a DataStruct object from each row of data
+            data_struct: object = DataStruct(line[0], line[1], line[2], line[3], line[4], line[5], line[6], line[7],
+                                             line[8])
 
-        # add the DataStruct object to the list
-        data_struct_list.append(data_struct)
+            # add the DataStruct object to the list
+            data_struct_list.append(data_struct)
 
-count: int = data_struct_list.__len__()
+    return data_struct_list
+
+
+data_struct_list = read_data()
+
+
+def get_total_count(data_struct_list: list) -> int:
+    """
+    Gets the total count of Coromon in the dataset.
+    :param data_struct_list: A list of DataStruct objects.
+    :return: The total count of Coromon in the dataset.
+    """
+    return data_struct_list.__len__()
+
+
+count: int = get_total_count(data_struct_list)
 print(f"There are {col.OKBLUE}{count}{col.ENDC} Coromon in the dataset.")
 
 random_coromon: list = [attribute for attribute in random.choice(data_struct_list).__dict__.values()]
@@ -175,8 +196,9 @@ print(f"Highest average Defense: {col.OKGREEN}{averagesDefence.get(max(averagesD
       f"{col.OKBLUE}{max(averagesDefence.keys())}{col.ENDC}.")
 print(f"Lowest average Defense: {col.OKGREEN}{averagesDefence.get(min(averagesDefence.keys()))}{col.ENDC}, with "
       f"{col.OKBLUE}{min(averagesDefence.keys())}{col.ENDC}.")
-print(f"Highest average Special Defense: {col.OKGREEN}{averagesSpDefence.get(max(averagesSpDefence.keys()))}{col.ENDC}, "
-      f"with {col.OKBLUE}{max(averagesSpDefence.keys())}{col.ENDC}.")
+print(
+    f"Highest average Special Defense: {col.OKGREEN}{averagesSpDefence.get(max(averagesSpDefence.keys()))}{col.ENDC}, "
+    f"with {col.OKBLUE}{max(averagesSpDefence.keys())}{col.ENDC}.")
 print(f"Lowest average Special Defense: {col.OKGREEN}{averagesSpDefence.get(min(averagesSpDefence.keys()))}{col.ENDC}, "
       f"with {col.OKBLUE}{min(averagesSpDefence.keys())}{col.ENDC}.")
 print(f"Highest average Speed: {col.OKGREEN}{averagesSpeed.get(max(averagesSpeed.keys()))}{col.ENDC}, with "
